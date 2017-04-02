@@ -1,13 +1,16 @@
-#espresso-mpc#
+espresso-mpc
+============
+
 A Raspberry Pi modification to the Rancilio Silvia Espresso Machine implementing model predictive temperature control.
 
-####Currently Implemented Features:####
+Features:
+---------
 * Brew and steam temperature control
-* RESTful API
 * Web interface for displaying temperature and other statistics
-* Programmable machine warm-up/wake-up
+* Programmable machine on/off timer and temperature set-point
 
-####Hardware####
+Hardware
+---------
 * Raspberry Pi zero W  
   * £10 - https://thepihut.com/collections/raspberry-pi-zero/products/raspberry-pi-zero-w
 * GPIO Headers
@@ -27,13 +30,15 @@ A Raspberry Pi modification to the Rancilio Silvia Espresso Machine implementing
 * 14 gauge wire - For connecting the A/C side of the relay to the circuit
   * $5 - Hardware Store / Scrap
 
-####Software####
+Software
+---------
 * OS - Raspbian Jessie
   * Lite (no need for a GUI) - https://downloads.raspberrypi.org/raspbian_lite_latest
 
 Install Raspbian and configure Wi-Fi and timezone.
 
-####espesso-mpc Software Installation Instructions####
+Installation Instructions
+--------------------------
 Execute on the pi bash shell:
 ````
 sudo apt-get -y update
@@ -43,7 +48,8 @@ sudo bash -c 'echo "dtparam=spi=on" >> /boot/config.txt'
 sudo reboot
 ````
 
-####After reboot:####
+After reboot
+--------------
 ````
 sudo git clone https://github.com/martinandreasson/espresso-mpc.git /root/espresso-mpc
 sudo /root/espresso-mpc/setup.sh
