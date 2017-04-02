@@ -1,7 +1,7 @@
 espresso-mpc
 ============
 
-A Raspberry Pi modification to the Rancilio Silvia Espresso Machine implementing model predictive temperature control.
+A Raspberry Pi modification to the Rancilio Silvia Espresso Machine implementing model predictive temperature control. [Longer description](http://people.kth.se/~mandreas/post/espresso/)
 
 Features:
 ---------
