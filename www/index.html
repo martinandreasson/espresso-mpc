@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="200x200" href="./coffee-icon.png">
+    <link rel="apple-touch-icon" href="/coffee-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Rancilio Silvia</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.css">
+    <script type="text/javascript" src="./js/smoothie.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Rancilio Silvia <small>Control panel</small></h1>
+    <div class="center-block">
+      <div id="fullrow" class="row">
+        <div class="col-xs-12">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h5 class="text-right">Current temperature: <span id="curtemp">00.00</span> °C</h5>
+        </div>
+      </div>
+      <hr>
+      <div class="row"  align="right">
+
+        <div class="col-xs-4">
+          <form class="form-inline" onsubmit="return false">
+            <div class="form-group">
+              <label for="inputSetTemp">Brew temperature: </label>
+              <div class="input-group" style="width:115px">
+                <input type="number" class="form-control" id="inputSetTemp">
+                <div class="input-group-addon">°C</div>
+              </div>
+            </div>
+         </form>
+       </div>
+
+       <div class="col-xs-4">
+         <form class="form-inline" onsubmit="return false">
+           <div class="form-group">
+             <label for="inputSetSteamTemp">Steam temperature: </label>
+             <div class="input-group" style="width:115px">
+               <input type="number" class="form-control" id="inputSetSteamTemp">
+               <div class="input-group-addon">°C</div>
+             </div>
+           </div>
+        </form>
+      </div>
+
+      <div class="col-xs-2">
+        <form class="form-inline" onsubmit="return false">
+          <div class="form-group">
+            <button id="toggletimer" class="btn btn-info">Timer</button>
+          </div>
+        </form>
+      </div>
+
+        <div class="col-xs-2">
+          <form class="form-inline" onsubmit="return false">
+            <div class="form-group">
+              <button id="toggleadv" class="btn btn-info">Advanced</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr>
+
+<div class="center-block timer">
+
+      <div class="row">
+
+       <div class="col-xs-2" align="right">
+          <b>  </b>
+       </div>
+
+       <div class="col-xs-3" align="left">
+       </div>
+
+       <div class="col-xs-3" align="right">
+          <b> Timer on: </b>
+       </div>
+
+       <div class="col-xs-3" align="left">
+          <b> Timer off: </b>
+       </div>
+      </div>
+      <hr>
+
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Monday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnMo" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffMo" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Tuesday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnTu" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffTu" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Wednesday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnWe" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffWe" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Thursday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnTh" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffTh" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Friday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnFr" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffFr" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Saturday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnSa" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffSa" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+       <div class="col-xs-2" align="left">
+       </div>
+
+       <div class="col-xs-3" align="left">
+             <b> Sunday: </b>
+       </div>
+
+       <div class="col-xs-3" align="right">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOnSu" style="width:70px">
+             </div>
+           </form>
+       </div>
+
+       <div class="col-xs-3" align="left">
+           <form class="form-inline" onsubmit="return false">
+             <div class="form-group">
+               <input type="time" class="form-control" id="inputTimerOffSu" style="width:70px">
+             </div>
+           </form>
+       </div>
+      </div>
+      <br>
+
+</div>
+
+    </div>
+    <div class="center-block adv">
+      <div class="row">
+        <div class="col-xs-12">
+          <canvas id="controllerchart"></canvas>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h5 class="text-right">Controller output: <span id="control_signal">00.00</span> %</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
